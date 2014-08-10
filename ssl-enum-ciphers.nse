@@ -42,27 +42,37 @@ and therefore is quite noisy.
 -- PORT    STATE SERVICE REASON
 -- 443/tcp open  https   syn-ack
 -- | ssl-enum-ciphers:
--- |   SSLv3
--- |     Ciphers (6)
--- |       TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA - unknown strength
--- |       TLS_DHE_RSA_WITH_AES_128_CBC_SHA - strong
--- |       TLS_DHE_RSA_WITH_AES_256_CBC_SHA - unknown strength
+-- |   SSLv3:
+-- |     ciphers:
+-- |       TLS_RSA_WITH_3DES_EDE_CBC_SHA - strong
+-- |       TLS_RSA_WITH_RC4_128_MD5 - strong
+-- |       TLS_RSA_WITH_RC4_128_SHA - strong
+-- |     preferred ciphers order:
+-- |       TLS_RSA_WITH_RC4_128_SHA
+-- |       TLS_RSA_WITH_3DES_EDE_CBC_SHA
+-- |       TLS_RSA_WITH_RC4_128_MD5
+-- |     compressors:
+-- |       NULL
+-- |   TLSv1.0:
+-- |     ciphers:
+-- |       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA - strong
+-- |       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA - strong
 -- |       TLS_RSA_WITH_3DES_EDE_CBC_SHA - strong
 -- |       TLS_RSA_WITH_AES_128_CBC_SHA - strong
--- |       TLS_RSA_WITH_AES_256_CBC_SHA - unknown strength
--- |     Compressors (1)
--- |       uncompressed
--- |   TLSv1.0
--- |     Ciphers (6)
--- |       TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA - unknown strength
--- |       TLS_DHE_RSA_WITH_AES_128_CBC_SHA - strong
--- |       TLS_DHE_RSA_WITH_AES_256_CBC_SHA - unknown strength
--- |       TLS_RSA_WITH_3DES_EDE_CBC_SHA - strong
--- |       TLS_RSA_WITH_AES_128_CBC_SHA - strong
--- |       TLS_RSA_WITH_AES_256_CBC_SHA - unknown strength
--- |     Compressors (1)
--- |       uncompressed
--- |_  Least strength = unknown strength
+-- |       TLS_RSA_WITH_AES_256_CBC_SHA - strong
+-- |       TLS_RSA_WITH_RC4_128_MD5 - strong
+-- |       TLS_RSA_WITH_RC4_128_SHA - strong
+-- |     preferred ciphers order:
+-- |       TLS_RSA_WITH_AES_128_CBC_SHA
+-- |       TLS_RSA_WITH_AES_256_CBC_SHA
+-- |       TLS_RSA_WITH_RC4_128_SHA
+-- |       TLS_RSA_WITH_3DES_EDE_CBC_SHA
+-- |       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+-- |       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+-- |       TLS_RSA_WITH_RC4_128_MD5
+-- |     compressors:
+-- |       NULL
+-- |_  least strength: strong
 --
 -- @xmloutput
 -- <table key="SSLv3">
